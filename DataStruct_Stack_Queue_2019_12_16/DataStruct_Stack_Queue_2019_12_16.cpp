@@ -2,10 +2,52 @@
 //
 
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include "SqStack.h"
 
+
+//杂：
+//指针存放的是地址，指针的基类型就是地址代表元素的类型
+//linkStack可以用作尾插法吗？
+//对linkStack的遍历改变节点内容吗？
 int main()
 {
-    std::cout << "Hello World!\n";
+	SqStack sq;
+	TYPE temp;
+
+	initStack(sq);
+
+	for (int i = 0;i < 10;i++)
+	{
+		printf("Please input 10 elem,this is  no.%d elem\n",i);
+		scanf_s("%d",&temp);
+		pushElem(sq, temp);
+		getchar();		
+	}
+
+	stackTravel(sq);
+
+	popElem(sq, temp);
+	popElem(sq, temp);
+	popElem(sq, temp);
+
+	stackTravel(sq);
+
+	popElem(sq, temp);
+	popElem(sq, temp);
+	popElem(sq, temp);
+	popElem(sq, temp);
+	popElem(sq, temp);
+	popElem(sq, temp);
+
+	stackTravel(sq);
+
+	popElem(sq, temp);
+	popElem(sq, temp);
+
+
+	return 0;
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
