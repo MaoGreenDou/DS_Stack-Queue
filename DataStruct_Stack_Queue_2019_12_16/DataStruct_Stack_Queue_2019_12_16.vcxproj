@@ -152,12 +152,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DataStruct_Stack_Queue_2019_12_16.cpp" />
+    <ClCompile Include="LinkQueue.cpp" />
     <ClCompile Include="LinkStack.cpp" />
+    <ClCompile Include="SqQueue.cpp" />
     <ClCompile Include="SqStack.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="SqQueue.h" />
     <ClInclude Include="SqStack.h" />
     <ClInclude Include="LinkStack.h" />
+    <ClInclude Include="LinkQueue.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

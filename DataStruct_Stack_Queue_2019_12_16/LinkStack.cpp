@@ -2,12 +2,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+Status createNode(pStack& ps)
+{
+	ps = (pStack)malloc(sizeof(sNode));
+	if (!ps)
+	{
+		printf("OVERFLOW!\n");
+		return ERROR;
+	}
+	else
+	{
+		return OK;
+	}
+}
+
+Status deleteNode(pStack& ps)
+{
+	free(ps);
+	ps = NULL;
+	return OK;
+}
+
 Status initStack(pStack& ps)
 {
 
 	createNode(ps);
 
 	ps->next = NULL;
+
+	return OK;
 }
 
 Status judgeEmpty(pStack ps)
@@ -23,7 +46,7 @@ Status judgeEmpty(pStack ps)
 
 }
 
-Status pushELem(pStack& ps, TYPE e)    //可用作尾插法吗？
+Status pushElem(pStack& ps, TYPE e)    //可用作尾插法吗？
 {
 	pStack pushTemp = NULL;
 	pStack temp = ps;
@@ -39,6 +62,8 @@ Status pushELem(pStack& ps, TYPE e)    //可用作尾插法吗？
 	}
 
 	temp->next = pushTemp;
+
+	return OK;
 }
 
 Status popElem(pStack& ps, TYPE& e)
@@ -68,7 +93,7 @@ Status popElem(pStack& ps, TYPE& e)
 	}
 }
 
-void stackTravel(pStack ps) //遍历会改变吗
+void stackTravel(pStack ps) //遍历会改变吗：
 {
 	int flag = 0;
 	while (ps->next)
@@ -77,9 +102,9 @@ void stackTravel(pStack ps) //遍历会改变吗
 		printf("Elem is %d\n", ps->data);
 		flag = 1;
 	}
-	if (flag)
+	if (!flag)
 	{
-		printf("Elem is %d\n", ps->data);
+		printf("Stack is empty! \n");
 	}
 }
 

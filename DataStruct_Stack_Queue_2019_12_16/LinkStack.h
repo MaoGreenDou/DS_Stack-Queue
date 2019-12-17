@@ -1,5 +1,4 @@
 #pragma once
-#include <cstddef>
 #define Status int
 #define OK 0
 #define ERROR 1
@@ -13,27 +12,10 @@ typedef struct stackNode
 	struct stackNode* next;
 }sNode,* pStack;
 
-Status createNode(pStack& ps)
-{
-	ps = (pStack)malloc(sizeof(sNode));
-	if (!ps)
-	{
-		printf("OVERFLOW!\n");
-		return ERROR;
-	}
-	else
-	{
-		return OK;
-	}
-}
+Status createNode(pStack& ps);
 
-Status deleteNode(pStack& ps)
-{
-	free(ps);
-	ps = NULL;
-	return OK;
-	
-}
+
+Status deleteNode(pStack& ps);
 
 Status initStack(pStack& ps);
 

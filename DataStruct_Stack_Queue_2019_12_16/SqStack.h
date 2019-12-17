@@ -1,7 +1,7 @@
 #pragma once
 #define MAXSIZE  100
 #define INCREMENTSIZE 10
-#define TYPE int
+#define TYPE char
 #define Status int
 #define OK 0
 #define ERROR -1 
